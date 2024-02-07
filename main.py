@@ -1,11 +1,10 @@
-#Create a Hello World Flask app
 from flask import Flask
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def index():
+    return 'Discord Bot Online'
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True)
