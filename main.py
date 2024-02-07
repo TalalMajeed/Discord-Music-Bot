@@ -13,4 +13,5 @@ def hello_world():
 if __name__ == '__main__':
     # Start the bot in a new thread
     bot_thread = threading.Thread(target=bot.run, args=(os.environ.get('TOKEN'),))
+    bot_thread.start()
     app.run(debug=True, port=80)
