@@ -2,6 +2,7 @@
 from flask import Flask
 from bot import bot
 import os
+import threading
 
 app = Flask(__name__)
 
@@ -10,5 +11,6 @@ def hello_world():
     return 'Hello, World!'
 
 if __name__ == '__main__':
-    bot.run(os.environ.get('TOKEN'))
+    # Start the bot in a new thread
+    bot_thread = threading.Thread(target=bot.run, args=(os.environ.get('TOKEN'),))
     app.run(debug=True, port=80)
